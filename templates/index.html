@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Search</title>
+    <style>
+        .single-booth{
+            background-color:#37D0E5;
+            padding:10px;
+            margin-bottom:5px;
+        }
+        .atm-search{
+        padding-top:10px;
+        padding-bottom:10px;
+        }
+        .input-search{
+            padding:5px;
+            font-size:18px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;background-color:#E53771">ATM Booth List</h1>
+    <div class="atm-search">
+        <form action="/" method="get">
+        <input type="text" class="input-search" name="search" placeholder="Search ATM">
+        <input type="submit" style="padding:8px">
+        </form>
+    </div>
+    <div class="atm-list">
+            {% for atm1 in atm %}
+        <div class="single-booth">
+            <h1>{{atm1.booth}}</h1>
+            <h3>{{atm1.address}}</h3>
+            <p>{{atm1.location}}</p>
+        </div>
+    </div>
+    <hr>
+        {% endfor %}
+</body>
+</html>
